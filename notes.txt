@@ -1,0 +1,6 @@
+video to watch
+https://www.youtube.com/watch?v=5_J7RWLLVeQ&t=382s
+
+links
+https://devopscube.com/create-helm-chart/#Debugging_Helm_Charts
+https://roadmap.sh/kubernetes
