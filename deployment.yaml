@@ -2,9 +2,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: example-deploy
+  name: "{{ .Values.name }}"
   labels:
-    app: example-app
+    app: "{{ .Values.name }}"
     test: test
   annotations:
     fluxcd.io/tag.example-app: semver:~1.0
@@ -12,7 +12,7 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: example-app
+      app: "{{ .Values.name }}"
   replicas: 2
   strategy:
     type: RollingUpdate
@@ -22,10 +22,10 @@ spec:
   template:
     metadata:
       labels:
-        app: example-app
+        app: "{{ .Values.name }}"
     spec:
       containers:
-      - name: example-app
+      - name: "{{ .Values.name }}"
         image: aimvector/python:1.0.4
         imagePullPolicy: Always
         ports:
